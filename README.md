@@ -9,7 +9,7 @@ Para instalar `giveports` de forma global en tu sistema GNU/Linux o macOS, ejecu
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com
+git clone https://github.com/CYRUJ4NO/giveports.git
 
 # Acceder a la carpeta del proyecto
 cd giveports
