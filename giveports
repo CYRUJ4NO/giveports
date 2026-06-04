@@ -1,0 +1,14 @@
+#/bin/bash
+# Si el archivo NO existe, avisa y detén el script
+[ ! -f "$1" ] && echo -e "\n[-] Error: El archivo '$1' no existe.\n" && exit 1
+
+# Definir el color amarillo y el reinicio de color
+AMARILLO="\e[1;33m"
+RESET="\e[0m"
+
+#aplicativo para tomar solo los puertos de una salida tipo -oN o -oG y mostrar en pantalla
+echo -e "\n${AMARILLO}Los puertos son:${RESET}"
+echo $(cat $1 | grep -E -o '[0-9]+/(tcp|udp)\s+open' | cut -d"/" -f1 | tr "\n" "," | sed 's/,$//')
+
+# Salto de línea final para que no se pegue al prompt de la terminal
+echo ""
